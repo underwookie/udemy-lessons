@@ -13,10 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('home');
+}); */
+
+Route::view('/', 'home');
+
+/* Route::get('/contact', function () {
+    return view('contact');
+}); */
+
+Route::view('/contact', 'contact');
+
+
+Route::get('/blog-post/{id}/{welcome?}', function($id, $welcome = 1) {
+    $pages = [
+        1 => [
+            'title' => 'from page 1',
+        ],
+        2 => [
+            'title' => 'from page 2',
+        ],
+    ];
+    $welcomes = [1 => 'Hello', 2=> 'Welcome to '];
+    return view('blog-post', [
+        'data' => $pages[$id],
+        'welcome' => $welcomes[$welcome],
+    ]);
 });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
