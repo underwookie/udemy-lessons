@@ -9,4 +9,10 @@ class BlogPost extends Model
     //protected $table = 'blogposts';
 
     protected $fillable = ['title', 'content'];
+
+public function comments()
+{
+    return $this->hasMany('App\Comment');
+}
+
 }
