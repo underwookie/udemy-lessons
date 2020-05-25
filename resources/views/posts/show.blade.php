@@ -14,7 +14,7 @@
 
     @forelse($post->comments as $comment)
         <p>
-            {{ $comment->content }},
+            {{ $comment->content }}
         </p>
         <p class="text-muted">
             added {{ $comment->created_at->diffForHumans() }}
