@@ -17,7 +17,7 @@
             {{ $comment->content }}
         </p>
         <p class="text-muted">
-            added {{ $comment->created_at->diffForHumans() }}
+            Added {{ $comment->created_at->diffForHumans() }}
         </p>
     @empty
         <p>No comments yet!</p>
